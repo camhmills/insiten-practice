@@ -10,11 +10,6 @@ export default function Researching() {
   const dispatch = useDispatch();
 
   const [company, setCompany] = useState({ name: "", type: "", margin: "" });
-  const [companyUpdate, setCompanyUpdate] = useState({
-    name: "",
-    type: "",
-    margin: "",
-  });
   const [addToggle, setAddToggle] = useState(false);
   const [updateToggle, setUpdateToggle] = useState(false);
 
@@ -27,7 +22,7 @@ export default function Researching() {
 
   const onSubmitUpdate = (e) => {
     e.preventDefault();
-    dispatch({ type: "UPDATE_RESEARCHING_COMPANY", payload: companyUpdate });
+    dispatch({ type: "UPDATE_RESEARCHING_COMPANY", payload: company });
   };
 
   const moveToNext = (company) => {
@@ -63,21 +58,11 @@ export default function Researching() {
             {updateToggle ? (
               <form onSubmit={onSubmitUpdate}>
                 <input
-                  placeholder="Company Name"
-                  name="name"
-                  onChange={(e) =>
-                    setCompanyUpdate({
-                      ...companyUpdate,
-                      [e.target.name]: e.target.value,
-                    })
-                  }
-                />
-                <input
                   placeholder="Type"
                   name="type"
                   onChange={(e) =>
-                    setCompanyUpdate({
-                      ...companyUpdate,
+                    setCompany({
+                      ...company,
                       [e.target.name]: e.target.value,
                     })
                   }
@@ -86,8 +71,8 @@ export default function Researching() {
                   placeholder="Margin"
                   name="margin"
                   onChange={(e) =>
-                    setCompanyUpdate({
-                      ...companyUpdate,
+                    setCompany({
+                      ...company,
                       [e.target.name]: e.target.value,
                     })
                   }

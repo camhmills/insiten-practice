@@ -14,14 +14,10 @@ const ResearchingReducer = (state = initialState, action) => {
       return newState;
     case "UPDATE_RESEARCHING_COMPANY":
       const updateState = state;
-      return updateState.map((company) => {
+      updateState.map(company => {
         if (company.name === action.payload.name) {
-          return {
-            ...updateState,
-            name: action.payload.name,
-            type: action.payload.type,
-            margin: action.payload.margin,
-          };
+          company.type = action.payload.type;
+          company.margin = action.payload.margin;
         } else {
           return state;
         }
