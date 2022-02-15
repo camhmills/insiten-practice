@@ -36,8 +36,8 @@ export default function Pending() {
         return (
           <CompanyCard key={index}>
             <h4>{company.name}</h4>
-            <h4>{company.type}</h4>
-            <h4>{company.margin}</h4>
+            <h4>Location Type: {company.type}</h4>
+            <h4>Margin: {company.margin}</h4>
             <ButtonContainer>
             <button
               onClick={() =>

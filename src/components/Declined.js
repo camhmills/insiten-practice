@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { CompanyCard, CompanyColumn } from "../styled-components/CompanyContainer";
+import { ButtonContainer, CompanyCard, CompanyColumn } from "../styled-components/CompanyContainer";
 
 export default function Declined() {
   const dispatch = useDispatch();
@@ -22,9 +22,11 @@ export default function Declined() {
         return (
             <CompanyCard key={index}>
             <h4>{company.name}</h4>
-            <h4>{company.type}</h4>
-            <h4>{company.margin}</h4>
+            <h4>Location Type: {company.type}</h4>
+            <h4>Margin: {company.margin}</h4>
+            <ButtonContainer>
             <button onClick={() => dispatch({type:"REMOVE_DECLINED_COMPANY", payload: company.name})}>Remove</button>
+            </ButtonContainer>
           </CompanyCard>
         );
       })}

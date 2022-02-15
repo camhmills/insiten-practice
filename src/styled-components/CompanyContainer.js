@@ -5,7 +5,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-height: 235px;
+height: auto;
 width: 250px;
 margin-bottom: 15px;
 border: 1px solid black

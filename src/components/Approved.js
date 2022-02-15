@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { CompanyCard, CompanyColumn } from "../styled-components/CompanyContainer";
+import { ButtonContainer, CompanyCard, CompanyColumn } from "../styled-components/CompanyContainer";
 
 export default function Approved() {
   const dispatch = useDispatch();
@@ -24,7 +24,9 @@ export default function Approved() {
             <h4>{company.name}</h4>
             <h4>Location Type: {company.type}</h4>
             <h4>Margin: {company.margin}</h4>
+            <ButtonContainer>
             <button onClick={() => dispatch({type:"REMOVE_APPROVED_COMPANY", payload: company.name})}>Remove</button>
+            </ButtonContainer>
           </CompanyCard>
         );
       })}
