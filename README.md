@@ -12,4 +12,4 @@ I couldn't quite get the update part of CRUD to function correctly - Some more b
 
 # How long did it take?
 
-So far, I have about 5 hours invested in this project, as of 2/15/2022, 3:30.
+So far, I have about 5 hours invested in this project, as of 2/15/2022, 3:30 P.M. EST.
